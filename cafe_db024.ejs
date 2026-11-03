@@ -1,0 +1,11 @@
+<table border="1">
+  <thead><tr><th>ID</th><th>메뉴명</th><th>가격</th><th>카테고리</th></tr></thead>
+  <tbody>
+    <% cafe_db024.forEach((item) => { %>
+      <tr><td><%= item.id %></td><td><%= item.name %></td><td><%= item.price %></td><td><%= item.category %></td></tr>
+    <% }); %>
+    <% if (cafe_db024.length === 0) { %>
+      <tr><td colspan="4">조회 결과가 없습니다.</td></tr>
+    <% } %>
+  </tbody>
+</table>

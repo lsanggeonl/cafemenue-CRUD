@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head><meta charset="UTF-8"><title>POST 1: 메뉴 등록</title></head>
+<body>
+  <h1>POST 1: 메뉴 등록</h1>
+  <form method="post" action="/cafe_db024">
+    <label>메뉴명 <input name="name" maxlength="100" required></label>
+    <label>가격 <input type="number" name="price" min="-2147483648" max="2147483647" required></label>
+    <label>카테고리 <input name="category" maxlength="100" required></label>
+    <button type="submit">메뉴 등록</button>
+  </form>
+  <%- include("partials/cafe_db024", { cafe_db024 }) %>
+  <p>폼 또는 주소를 통해 요청하고 조회 결과를 확인하세요.</p>
+	<hr>
+
+	<h2>메뉴 수정</h2>
+
+	<form method="post" action="/cafe_db024/update">
+
+	  <label>
+	    수정할 메뉴 ID
+	    <input type="number" name="id" min="1" required>
+	  </label>
+
+	  <label>
+	    메뉴명
+	    <input name="name" maxlength="100" required>
+	  </label>
+
+	  <label>
+	    가격
+	    <input type="number" name="price" min="0"
+	           max="2147483647" required>
+	  </label>
+
+	  <label>
+	    카테고리
+	    <input name="category" maxlength="100" required>
+	  </label>
+
+	  <button type="submit">메뉴 수정</button>
+
+	</form>
+	
+	<h2>메뉴 삭제</h2>
+
+	<form method="post" action="/cafe_db024/delete">
+
+	  <label>
+	    삭제할 메뉴 ID
+	    <input type="number" name="id" min="1" required>
+	  </label>
+	</form>
+</body>
+</html>
